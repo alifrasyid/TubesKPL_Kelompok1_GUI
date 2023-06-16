@@ -43,9 +43,13 @@
             this.labelUser = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelMenu = new System.Windows.Forms.Label();
+            this.TabelOrderHistory = new System.Windows.Forms.DataGridView();
+            this.labelOH = new System.Windows.Forms.Label();
+            this.Refresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelOrderHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,14 +75,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel2.Controls.Add(this.labelOrder);
+            this.panel2.Controls.Add(this.labeldelete);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.labelSReport);
             this.panel2.Controls.Add(this.labelSHistory);
             this.panel2.Controls.Add(this.labelOHistory);
             this.panel2.Controls.Add(this.labelPayment);
             this.panel2.Controls.Add(this.labelSearch);
-            this.panel2.Controls.Add(this.labelOrder);
-            this.panel2.Controls.Add(this.labeldelete);
             this.panel2.Controls.Add(this.labelAdd);
             this.panel2.Controls.Add(this.labelUser);
             this.panel2.Controls.Add(this.panel3);
@@ -154,6 +158,7 @@
             this.labelOrder.Size = new System.Drawing.Size(200, 25);
             this.labelOrder.TabIndex = 4;
             this.labelOrder.Text = "Order";
+            this.labelOrder.Click += new System.EventHandler(this.labelOrder_Click);
             // 
             // labeldelete
             // 
@@ -164,6 +169,7 @@
             this.labeldelete.Size = new System.Drawing.Size(200, 25);
             this.labeldelete.TabIndex = 3;
             this.labeldelete.Text = "Delete Book";
+            this.labeldelete.Click += new System.EventHandler(this.labeldelete_Click);
             // 
             // labelAdd
             // 
@@ -174,6 +180,7 @@
             this.labelAdd.Size = new System.Drawing.Size(200, 25);
             this.labelAdd.TabIndex = 2;
             this.labelAdd.Text = "Add Book";
+            this.labelAdd.Click += new System.EventHandler(this.labelAdd_Click);
             // 
             // labelUser
             // 
@@ -206,12 +213,48 @@
             this.labelMenu.TabIndex = 2;
             this.labelMenu.Text = "Menu";
             // 
+            // TabelOrderHistory
+            // 
+            this.TabelOrderHistory.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.TabelOrderHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabelOrderHistory.Location = new System.Drawing.Point(310, 204);
+            this.TabelOrderHistory.Name = "TabelOrderHistory";
+            this.TabelOrderHistory.RowHeadersWidth = 51;
+            this.TabelOrderHistory.Size = new System.Drawing.Size(500, 281);
+            this.TabelOrderHistory.TabIndex = 14;
+            // 
+            // labelOH
+            // 
+            this.labelOH.AutoSize = true;
+            this.labelOH.Font = new System.Drawing.Font("Forte", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOH.ForeColor = System.Drawing.Color.Black;
+            this.labelOH.Location = new System.Drawing.Point(305, 97);
+            this.labelOH.Name = "labelOH";
+            this.labelOH.Size = new System.Drawing.Size(168, 30);
+            this.labelOH.TabIndex = 1;
+            this.labelOH.Text = "Order History";
+            this.labelOH.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // Refresh
+            // 
+            this.Refresh.Font = new System.Drawing.Font("Franklin Gothic Demi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Refresh.Location = new System.Drawing.Point(735, 155);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(75, 23);
+            this.Refresh.TabIndex = 15;
+            this.Refresh.Text = "Refresh";
+            this.Refresh.UseVisualStyleBackColor = true;
+            this.Refresh.Click += new System.EventHandler(this.button1_Click);
+            // 
             // OrderHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(869, 520);
+            this.Controls.Add(this.Refresh);
+            this.Controls.Add(this.labelOH);
+            this.Controls.Add(this.TabelOrderHistory);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "OrderHistory";
@@ -222,7 +265,9 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabelOrderHistory)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -243,5 +288,8 @@
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelMenu;
+        private System.Windows.Forms.DataGridView TabelOrderHistory;
+        private System.Windows.Forms.Label labelOH;
+        private System.Windows.Forms.Button Refresh;
     }
 }
